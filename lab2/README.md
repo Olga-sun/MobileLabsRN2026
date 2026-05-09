@@ -1,50 +1,41 @@
-# Welcome to your Expo app 👋
+# Лабораторна робота №2: Навігація та списки у React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Виконала:** Литвинчук Ольга, група ІПЗ-24-3
 
-## Get started
 
-1. Install dependencies
+Щоб запустити цей проєкт локально, виконайте наступні кроки:
 
+1. Встановіть залежності:
    ```bash
    npm install
-   ```
+   Запустіть проєкт: npx expo start -c
+   Відскануйте QR-код за допомогою додатка Expo Go на вашому смартфоні (або запустіть на емуляторі)
+   
+   У рамках лабораторної роботи було реалізовано мобільний додаток з наступними можливостями:
 
-2. Start the app
+Drawer Navigation (Бічне меню): Реалізовано кастомне виїзне меню з фотографією профілю, іменем та групою студента.
 
-   ```bash
-   npx expo start
-   ```
+Stack Navigation: Навігація між загальним списком новин та екраном деталей конкретної новини.
 
-In the output, you'll find options to open the app in a
+Вкладена навігація: Поєднання Stack Navigator всередині Drawer Navigator.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Робота зі списками (FlatList): Вивід масиву новин за допомогою компонента FlatList з підтримкою "pull-to-refresh" (оновлення свайпом вниз).
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Передача параметрів: Передача даних обраної новини на екран деталей.
 
-## Get a fresh project
+1. Чим відрізняється FlatList від ScrollView?
+ScrollView відразу рендерить (завантажує в пам'ять) усі елементи, які знаходяться всередині нього, навіть якщо вони зараз не видимі на екрані. Це дуже споживає пам'ять при великих списках. FlatList рендерить лише ті елементи, які зараз знаходяться на екрані (плюс кілька про запас), що робить його дуже швидким і оптимізованим для довгих списків.
 
-When you're ready, run:
+2. Що таке віртуалізація списків?
+Це техніка оптимізації (яка якраз використовується у FlatList), при якій система не створює нові елементи інтерфейсу для кожного запису в довгому списку. Замість цього вона "перевикористовує" комірки, які вийшли за межі екрана під час скролінгу, підставляючи в них нові дані. Це кардинально економить ресурси пристрою.
 
-```bash
-npm run reset-project
-```
+3. Як здійснюється передача параметрів між екранами?
+Передача параметрів здійснюється під час виклику функції переходу navigation.navigate(). Параметри передаються як другий аргумент у вигляді об'єкта.
+Наприклад: navigation.navigate('Details', { item: myData }).
+На цільовому екрані ці дані витягуються з пропсів через route.params (наприклад, const { item } = route.params;).
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+4. Що таке вкладена навігація?
+Вкладена навігація (Nested Navigation) — це ситуація, коли один навігатор рендериться всередині екрана іншого навігатора. Наприклад, у нашому додатку Stack Navigator (який відповідає за перехід від стрічки новин до деталей) вкладений всередину Drawer Navigator (бічного меню) як один з його екранів.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. У яких випадках застосовується SectionList?
+SectionList застосовується, коли дані логічно поділені на категорії (секції), і кожна секція повинна мати свій заголовок. Наприклад: телефонна книга (згрупована за літерами алфавіту), меню ресторану (згруповане за "Напої", "Десерти", "Основні страви") або розклад занять (згрупований по днях тижня).
