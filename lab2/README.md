@@ -24,10 +24,10 @@ Stack Navigation: Навігація між загальним списком н
 Передача параметрів: Передача даних обраної новини на екран деталей.
 Скріншоти роботи застосунку
 <p align="center">
-  <img src="lab2/assets/images/photo_2026-05-09_21-36-51.jpg" width="200" />
-  <img src="lab2/assets/images/photo_2026-05-09_21-36-51%20(2).jpg" width="200" />
-  <img src="lab2/assets/images/photo_2026-05-09_21-36-51%20(3).jpg" width="200" />
-  <img src="lab2/assets/images/photo_2026-05-09_21-36-51%20(4).jpg" width="200" />
+  <img src="assets/images/photo_2026-05-09_21-36-51.jpg" width="200" />
+  <img src="assets/images/photo_2026-05-09_21-36-51%20(2).jpg" width="200" />
+  <img src="assets/images/photo_2026-05-09_21-36-51%20(3).jpg" width="200" />
+  <img src="assets/images/photo_2026-05-09_21-36-51%20(4).jpg" width="200" />
 </p>
 
 1. Чим відрізняється FlatList від ScrollView?
