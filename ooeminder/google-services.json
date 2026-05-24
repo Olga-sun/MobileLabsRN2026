@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548121209220",
+    "project_id": "lab8-rn",
+    "storage_bucket": "lab8-rn.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548121209220:android:c0e2af791b0d811f4c15d1",
+        "android_client_info": {
+          "package_name": "com.olha.ooeminder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjyokwOfqB5Ua0USf-gJXW2vQ_YAWfC_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
